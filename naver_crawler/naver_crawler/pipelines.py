@@ -12,7 +12,7 @@ from scrapy.exporters import CsvItemExporter
 
 class NaverCrawlerPipeline:
     def process_item(self, item, spider):
-        with open("news.csv", "wb") as f:
+        with open("news.csv", "ab") as f:
             exporter = CsvItemExporter(f, encoding="utf-8")
             exporter.export_item(item)
         return item
